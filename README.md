@@ -1,37 +1,24 @@
-#####################################################################
 # Coupled Generative Adversarial Network code
-#####################################################################
 
-#####################################################################
 # General
-#####################################################################
 
 This is an implementation of the Coupled Generative Adversarial Netowork algorithm. For more details please refer to our NIPS paper.
 
 Please cite CoGAN in your publications if it helps your research:
 
 @inproceedings{liu2016coupled,
-
   title={Coupled Generative Adversarial Networks},
-
   author={Liu, Ming-Yu and Tuzel, Oncel},
-
   booktitle={NIPS},
-
   year={2016}
-
 }
 
-#####################################################################
 # Content
-#####################################################################
 
 /caffe: 
 
-	The folder contains a modified version of Caffe. It includes a 
-	new solver and several new layers for supporting back propagation
-	 with alternating gradient update steps. Note that several 
-	 existing classes were modified for the same need.
+	The folder contains a modified version of Caffe. It includes a 	new solver and several new layers for supporting back propagation
+	 with alternating gradient update steps. Note that several existing classes were modified for the same need.
 
 /cogan:
 	
