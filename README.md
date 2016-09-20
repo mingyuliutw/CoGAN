@@ -15,27 +15,34 @@ Please cite CoGAN in your publications if it helps your research:
 
 # Content
 
-/caffe: 
+caffe/
 
-	The folder contains a modified version of Caffe. It includes a 	new solver and several new layers for supporting back propagation
-	 with alternating gradient update steps. Note that several existing classes were modified for the same need.
+The folder contains a modified version of Caffe. It includes a 	new solver and several new layers for supporting back propagation with alternating gradient update steps. Note that several existing classes were modified for the same need.
 
-/cogan:
+cogan/
 	
-	The folder contains the solver and network definition files.
+The folder contains the solver and network definition files.
+
+build.sh
+
+A script for building the Caffe library.
+
+train_cogan.sh
+
+A script for train a CoGAN net.
+
+test_cogan.sh
+
+A script for visualizing CoGAN training results.
 
 
-#####################################################################
 # Usage
-#####################################################################
 
 ./build.sh
 ./train_cogan.sh
 ./test_cogan.sh
 
-#####################################################################
 # Copyright 2016, Ming-Yu Liu
-#####################################################################
 
 All Rights Reserved 
 
