@@ -1,0 +1,167 @@
+name: "MNIST2USPS"
+#####################################################
+### True data
+#####################################################
+layer {
+  name: "data_B"
+  type: "ImageData"
+  top: "data_B"
+  top: "classlabels_B"
+  transform_param { scale: 0.0039215684 }
+  image_data_param {
+    source: "../data/usps_digits/usps_train_list_random1800.txt"
+    root_folder: "../data/usps_digits/padded_images/"
+    batch_size: 100
+    is_color: false
+    # shuffle: true
+  }  
+}
+#####################################################
+### LeNet
+#####################################################
+#####################################################
+### conv0
+#####################################################
+# layer {
+#   bottom: "data_and_fake_data_A"
+#   top: "conv0_A"
+#   name: "conv0_A_conv"
+#   type: "Convolution"
+# 
+# 
+#   convolution_param {
+#     num_output: 20
+#     kernel_size: 5 
+#     pad: 0 
+#     stride: 1 
+#     weight_filler { type: "msra" }
+#     bias_filler { type: "constant" }  
+#   }
+# }
+layer {
+  bottom: "data_B"
+  top: "conv0_B"
+  name: "conv0_B_conv"
+  type: "Convolution"
+
+
+  convolution_param {
+    num_output: 20
+    kernel_size: 5 
+    pad: 0 
+    stride: 1 
+    weight_filler { type: "msra" }
+    bias_filler { type: "constant" }  
+  }
+}
+# layer {
+#   bottom: "conv0_A"
+#   top: "pool0_A"
+#   name: "pool0_A"
+#   type: "Pooling"
+#   pooling_param { pool: MAX kernel_size: 2 stride: 2 }
+# } 
+layer {
+  bottom: "conv0_B"
+  top: "pool0_B"
+  name: "pool0_B"
+  type: "Pooling"
+  pooling_param { pool: MAX kernel_size: 2 stride: 2 }
+} 
+#####################################################
+### conv1
+#####################################################
+layer {
+  bottom: "pool0_B"
+  top: "conv1"
+  name: "conv1_conv"
+  type: "Convolution"
+
+
+  convolution_param {
+    num_output: 50
+    kernel_size: 5 
+    pad: 0 
+    stride: 1 
+    weight_filler { type: "msra" }
+    bias_filler { type: "constant" }  
+  }
+}
+layer {
+  bottom: "conv1"
+  top: "pool1"
+  name: "pool1"
+  type: "Pooling"
+  pooling_param { pool: MAX kernel_size: 2 stride: 2 }
+} 
+#####################################################
+### conv2
+#####################################################
+layer {
+  bottom: "pool1"
+  top: "conv2"
+  name: "conv2"
+  type: "InnerProduct"
+
+
+  inner_product_param {
+    num_output: 500
+    weight_filler { type: "msra" }
+    bias_filler { type: "constant" }
+  }
+}
+layer { 
+  bottom: "conv2" 
+  top: "conv2" 
+  name: "conv2_prelu" 
+  type:"PReLU"
+
+}
+# #############################################################################
+# #############################################################################
+# #############################################################################
+# #############################################################################
+# #############################################################################
+# #############################################################################
+# #############################################################################
+# #############################################################################
+layer {
+  bottom: "conv2"
+  top: "output_conv2_classify"
+  name: "output_conv2_classify"
+  type: "InnerProduct"
+
+
+  inner_product_param {
+    num_output: 10
+    weight_filler { type: "msra" }
+    bias_filler { type: "constant" }
+  }
+}
+# layer {
+#   bottom: "output_conv2_classify"
+#   bottom: "classlabels_B"
+#   propagate_down: 1
+#   propagate_down: 0
+#   top: "loss_classifier"
+#   name: "loss_classifier"
+#   type: "SoftmaxWithLoss"
+#   loss_weight: 0.5
+# }
+layer {
+  bottom: "output_conv2_classify"
+  bottom: "classlabels_B"
+  top: "accuracy_classifier"
+  name: "accuracy_classifier"
+  type: "Accuracy"
+}
+# layer {
+#   bottom: "rep_A_fake"
+#   bottom: "rep_B_fake"
+#   name: "loss_euclidean"
+#   top: "loss_euclidean"
+#   type: "EuclideanLoss"  
+#   propagate_down: 1
+#   propagate_down: 1
+#   loss_weight: 0.01
+# }

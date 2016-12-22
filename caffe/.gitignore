@@ -51,6 +51,7 @@
 .DS_Store
 
 ## Caffe
+*.png
 
 # User's build configuration
 Makefile.config
@@ -59,7 +60,9 @@ Makefile.config
 # 1. reference, and not casually committed
 # 2. custom, and live on their own unless they're deliberated contributed
 data/*
-models/*
+logs/*
+snapshots/*
+#models/*
 *.caffemodel
 *.caffemodel.h5
 *.solverstate
@@ -93,3 +96,4 @@ LOCK
 LOG*
 CURRENT
 MANIFEST-*
+results/

@@ -1,0 +1,12 @@
+net: "../models/mnist2usps/train.ptt"
+base_lr: 0.0002 
+momentum: 0.5
+momentum2: 0.999
+lr_policy: "fixed"
+type: "AlterAdam"
+weight_decay: 0.0005
+display: 10
+max_iter: 30000
+snapshot: 2000
+snapshot_prefix: "../snapshots/mnist2usps/train"
+solver_mode: GPU

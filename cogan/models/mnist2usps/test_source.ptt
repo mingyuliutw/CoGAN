@@ -1,0 +1,148 @@
+name: "MNIST2USPS"
+#####################################################
+### True data
+#####################################################
+layer {
+  name: "data_A"
+  type: "ImageData"
+  top: "data_A"
+  top: "classlabels_A"
+  transform_param { scale: 0.0039215684 }
+  image_data_param {
+    source: "../data/mnist_digits/mnist_train_list_random2000.txt"
+    root_folder: "../data/mnist_digits/images/"
+    batch_size: 100
+    is_color: false
+  }  
+}
+#####################################################
+### LeNet
+#####################################################
+#####################################################
+### conv0
+#####################################################
+layer {
+  bottom: "data_A"
+  top: "conv0_A"
+  name: "conv0_A_conv"
+  type: "Convolution"
+  
+  
+  convolution_param {
+    num_output: 20
+    kernel_size: 5 
+    pad: 0 
+    stride: 1 
+    weight_filler { type: "msra" }
+    bias_filler { type: "constant" }  
+  }
+}
+# layer {
+#   bottom: "data_B"
+#   top: "conv0_B"
+#   name: "conv0_B_conv"
+#   type: "Convolution"
+#   
+#   
+#   convolution_param {
+#     num_output: 20
+#     kernel_size: 5 
+#     pad: 0 
+#     stride: 1 
+#     weight_filler { type: "msra" }
+#     bias_filler { type: "constant" }  
+#   }
+# }
+layer {
+  bottom: "conv0_A"
+  top: "pool0_A"
+  name: "pool0_A"
+  type: "Pooling"
+  pooling_param { pool: MAX kernel_size: 2 stride: 2 }
+} 
+# layer {
+#   bottom: "conv0_B"
+#   top: "pool0_B"
+#   name: "pool0_B"
+#   type: "Pooling"
+#   pooling_param { pool: MAX kernel_size: 2 stride: 2 }
+# } 
+#####################################################
+### conv1
+#####################################################
+layer {
+  bottom: "pool0_A"
+  top: "conv1"
+  name: "conv1_conv"
+  type: "Convolution"
+  
+  
+  convolution_param {
+    num_output: 50
+    kernel_size: 5 
+    pad: 0 
+    stride: 1 
+    weight_filler { type: "msra" }
+    bias_filler { type: "constant" }  
+  }
+}
+layer {
+  bottom: "conv1"
+  top: "pool1"
+  name: "pool1"
+  type: "Pooling"
+  pooling_param { pool: MAX kernel_size: 2 stride: 2 }
+} 
+#####################################################
+### conv2
+#####################################################
+layer {
+  bottom: "pool1"
+  top: "conv2"
+  name: "conv2"
+  type: "InnerProduct"
+  
+  
+  inner_product_param {
+    num_output: 500
+    weight_filler { type: "msra" }
+    bias_filler { type: "constant" }
+  }
+}
+layer { 
+  bottom: "conv2" 
+  top: "conv2" 
+  name: "conv2_prelu" 
+  type:"PReLU"
+  
+}
+
+# #############################################################################
+# #############################################################################
+# #############################################################################
+# #############################################################################
+# #############################################################################
+# #############################################################################
+# #############################################################################
+
+# #############################################################################
+layer {
+  bottom: "conv2"
+  top: "output_conv2_classify"
+  name: "output_conv2_classify"
+  type: "InnerProduct"
+  
+  
+  inner_product_param {
+    num_output: 10
+    weight_filler { type: "msra" }
+    bias_filler { type: "constant" }
+  }
+}
+layer {
+  bottom: "output_conv2_classify"
+  bottom: "classlabels_A"
+  top: "accuracy_classifier"
+  name: "accuracy_classifier"
+  type: "Accuracy"
+}
