@@ -4,14 +4,9 @@
 
 This is an implementation of the Coupled Generative Adversarial Netowork algorithm. For more details please refer to our NIPS paper.
 
-Please cite CoGAN in your publications if it helps your research:
+Please cite the CoGAN paper in your publications if it is the code is useful to your research.
 
-@inproceedings{liu2016coupled,
-  title={Coupled Generative Adversarial Networks},
-  author={Liu, Ming-Yu and Tuzel, Oncel},
-  booktitle={NIPS},
-  year={2016}
-}
+Also, a PyTorch implementation of CoGAN is available in https://github.com/mingyuliutw/CoGAN_PyTorch.
 
 # Content
 
