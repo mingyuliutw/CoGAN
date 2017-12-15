@@ -1,0 +1,10 @@
+train:
+    max_iter: 5000
+    display: 10
+    snapshot_iter: 1000
+    batch_size: 64
+    latent_dims: 100
+    log: ../outputs/mnist_gan/mnist_gan.log
+    snapshot_prefix: ../outputs/mnist_gan/mnist_gan
+    scale: 2.0
+    bias: 0.5

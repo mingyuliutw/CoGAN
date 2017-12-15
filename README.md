@@ -2,7 +2,7 @@
 
 # General
 
-This is the open source repository for the Coupled Generative Adversarial Network (CoupledGAN or CoGAN) work.  For more details please refer to our [NIPS paper](https://papers.nips.cc/paper/6544-coupled-generative-adversarial-networks.pdf) or our [arXiv paper](https://arxiv.org/abs/1606.07536). Please cite the NIPS paper in your publications if you find the source code useful to your research.
+This is the open source repository for the Coupled Generative Adversarial Network (CoupledGAN or CoGAN) work.  For more details please refer to our [NIPS 2016 paper](https://papers.nips.cc/paper/6544-coupled-generative-adversarial-networks.pdf) or our [arXiv paper](https://arxiv.org/abs/1606.07536). Please cite the NIPS paper in your publications if you find the source code useful to your research.
 
 Please cite our NIPS paper in your publications if it helps your research:
 
@@ -12,6 +12,8 @@ Please cite our NIPS paper in your publications if it helps your research:
   booktitle={NIPS},
   year={2016}
 }
+
+I have improved the algorithm by combining with encoders. For more details please check our [NIPS 2017 paper on Unsupervised Image-to-Image Translation Networks](https://papers.nips.cc/paper/6672-unsupervised-image-to-image-translation-networks.pdf)
 
 # USAGE
 

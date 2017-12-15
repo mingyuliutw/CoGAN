@@ -1,0 +1,10 @@
+train:
+    max_iter: 5000
+    display: 10
+    snapshot_iter: 500
+    batch_size: 64
+    latent_dims: 100
+    log: ../outputs/mnistedge_cogan/mnistedge_cogan.log
+    snapshot_prefix: ../outputs/mnistedge_cogan/mnistedge_cogan
+    scale: 2.0
+    bias: 0.5
