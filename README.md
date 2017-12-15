@@ -2,9 +2,9 @@
 
 # General
 
-This is an implementation of the Coupled Generative Adversarial Netowork algorithm. For more details please refer to our NIPS paper.
+This is the open source repository for the Coupled Generative Adversarial Network (CoupledGAN or CoGAN) work.  For more details please refer to our [NIPS paper](https://papers.nips.cc/paper/6544-coupled-generative-adversarial-networks.pdf) or our [arXiv paper](https://arxiv.org/abs/1606.07536). Please cite the NIPS paper in your publications if you find the source code useful to your research.
 
-Please cite CoGAN in your publications if it helps your research:
+Please cite our NIPS paper in your publications if it helps your research:
 
 @inproceedings{liu2016coupled,
   title={Coupled Generative Adversarial Networks},
@@ -13,52 +13,32 @@ Please cite CoGAN in your publications if it helps your research:
   year={2016}
 }
 
-# Content
+# USAGE
 
-caffe/
-
-The folder contains a modified version of Caffe. It includes a 	new solver and several new layers for supporting back propagation with alternating gradient update steps. Note that several existing classes were modified for the same need.
-
-cogan/
-	
-The folder contains the solver and network definition files.
-
-build.sh
-
-A script for building the Caffe library.
-
-train_cogan.sh
-
-A script for train a CoGAN net.
-
-test_cogan.sh
-
-A script for visualizing CoGAN training results.
+In this repository, we provide both [Caffe](https://github.com/BVLC/caffe) implementation and [PyTorch](http://pytorch.org/) implementation. For using the code with the [Caffe](https://github.com/BVLC/caffe) library, please consult [USAGE_CAFFE](USAGE_CAFFE.md). For using the code with the [PyTorch](http://pytorch.org/) library, please consult [USAGE_PYTORCH](USAGE_PYTORCH.md).
 
 
-# Usage
 
-./build.sh
-./train_cogan.sh
-./test_cogan.sh
+### CoGAN Network Architecture
+![](https://github.com/mingyuliutw/CoGAN_PyTorch/blob/master/images/overview_landscape_very_tight.jpg)
 
-# Copyright 2016, Ming-Yu Liu
+### CoGAN learn to generate corresponding smile and non-smile faces
+![](https://github.com/mingyuliutw/CoGAN_PyTorch/blob/master/images/result_face_smiling_small.jpg)
 
-All Rights Reserved 
+### CoGAN learn to generate corresponding faces with blond-hair and without non-blond-hair
+![](https://github.com/mingyuliutw/CoGAN_PyTorch/blob/master/images/result_face_blondhair_small.jpg)
 
-Permission to use, copy, modify, and distribute this software and 
-its documentation for any non-commercial purpose is hereby granted 
-without fee, provided that the above copyright notice appear in 
-all copies and that both that copyright notice and this permission 
-notice appear in supporting documentation, and that the name of 
-the author not be used in advertising or publicity pertaining to 
-distribution of the software without specific, written prior 
-permission. 
+### CoGAN learn to generate corresponding faces with eye-glasses and without eye-glasses
+![](https://github.com/mingyuliutw/CoGAN_PyTorch/blob/master/images/result_face_eyeglasses_small.jpg)
 
-THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, 
-INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
-ANY PARTICULAR PURPOSE. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR 
-ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES 
-WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN 
-AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING 
-OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. 
+### CoGAN learn to generate corresponding RGB and depth images
+![](https://github.com/mingyuliutw/CoGAN_PyTorch/blob/master/images/result_nyu_small.jpg)
+
+---
+
+Copyright 2017, Ming-Yu Liu
+All Rights Reserved
+
+Permission to use, copy, modify, and distribute this software and its documentation for any non-commercial purpose is hereby granted without fee, provided that the above copyright notice appear in all copies and that both that copyright notice and this permission notice appear in supporting documentation, and that the name of the author not be used in advertising or publicity pertaining to distribution of the software without specific, written prior permission.
+
+THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR ANY PARTICULAR PURPOSE. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.

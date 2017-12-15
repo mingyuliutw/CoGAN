@@ -1,0 +1,11 @@
+outputs/
+data/
+logs/
+.idea/
+dgx/scripts/
+notebooks/.ipynb_checkpoints/*
+*.tar.gz
+*.zip
+*.pkl
+*.pyc
+*.tar
