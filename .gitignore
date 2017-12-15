@@ -10,3 +10,6 @@ notebooks/.ipynb_checkpoints/*
 *.pyc
 *.tar
 *.DS_Store
+*ubyte
+*.log
+
