@@ -1,0 +1,12 @@
+net: "../models/celeba/celeba.train.ptt"
+base_lr: 0.0002
+momentum: 0.5
+momentum2: 0.999
+lr_policy: "fixed"
+type: "AlterAdam"
+weight_decay: 0.000100
+display: 10
+max_iter: 100000
+snapshot: 500
+snapshot_prefix: "../snapshots/celeba/celeba.train"
+solver_mode: GPU
