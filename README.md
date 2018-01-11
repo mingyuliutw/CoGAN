@@ -12,19 +12,19 @@ In this repository, we provide both [Caffe](https://github.com/BVLC/caffe) imple
 
 
 ## CoGAN Network Architecture
-![](https://github.com/mingyuliutw/CoGAN_PyTorch/blob/master/images/overview_landscape_very_tight.jpg)
+![](https://github.com/mingyuliutw/CoGAN/blob/master/cogan_pytorch/images/overview_landscape_very_tight.jpg)
 
 ## CoGAN learn to generate corresponding smile and non-smile faces
-![](https://github.com/mingyuliutw/CoGAN_PyTorch/blob/master/images/result_face_smiling_small.jpg)
+![](https://github.com/mingyuliutw/CoGAN/blob/master/cogan_pytorch/images/result_face_smiling_small.jpg)
 
 ## CoGAN learn to generate corresponding faces with blond-hair and without non-blond-hair
-![](https://github.com/mingyuliutw/CoGAN_PyTorch/blob/master/images/result_face_blondhair_small.jpg)
+![](https://github.com/mingyuliutw/CoGAN/blob/master/cogan_pytorch/images/result_face_blondhair_small.jpg)
 
 ## CoGAN learn to generate corresponding faces with eye-glasses and without eye-glasses
-![](https://github.com/mingyuliutw/CoGAN_PyTorch/blob/master/images/result_face_eyeglasses_small.jpg)
+![](https://github.com/mingyuliutw/CoGAN/blob/master/cogan_pytorch/images/result_face_eyeglasses_small.jpg)
 
 ## CoGAN learn to generate corresponding RGB and depth images
-![](https://github.com/mingyuliutw/CoGAN_PyTorch/blob/master/images/result_nyu_small.jpg)
+![](https://github.com/mingyuliutw/CoGAN/blob/master/cogan_pytorch/images/result_nyu_small.jpg)
 
 ---
 

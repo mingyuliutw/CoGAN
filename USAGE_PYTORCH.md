@@ -8,7 +8,7 @@ cd cogan_pytorch/src;
 python train_cogan_mnistedge.py --config ../exps/mnistedge_cogan.yaml;
 ```
 After 5000 iterations, you will see the generation results in outputs/mnistedges_cogan/ and they should look like.
-![](https://github.com/mingyuliutw/CoGAN_PyTorch/blob/master/outputs/mnistedge_cogan/mnistedge_cogan_gen_00005000.jpg)
+![](cogan_pytorch/outputs/mnistedge_cogan/mnistedge_cogan_gen_00005000.jpg)
 
 
 #### Domain adaptation using all training images
